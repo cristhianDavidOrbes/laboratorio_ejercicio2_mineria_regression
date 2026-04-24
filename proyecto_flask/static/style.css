@@ -1,0 +1,145 @@
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #17212b;
+    --muted: #4f5d6a;
+    --border: #dce3ea;
+    --accent: #0f6cbd;
+    --accent-dark: #0a4f8a;
+    --error-bg: #fde8e8;
+    --error-text: #8b1f1f;
+    --result-bg: #e8f4ff;
+    --result-text: #0b3f70;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f7f9fb 0%, #edf2f7 100%);
+    color: var(--text);
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.card {
+    width: 100%;
+    max-width: 640px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 14px 30px rgba(19, 34, 53, 0.08);
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 1.7rem;
+}
+
+.subtitle {
+    margin: 0 0 24px;
+    color: var(--muted);
+}
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+.input-group {
+    display: grid;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f9fbfd;
+    border: 1px solid var(--border);
+}
+
+.field-row {
+    display: grid;
+    gap: 6px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+select,
+input {
+    width: 100%;
+    border: 1px solid #cbd6e2;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    background: #fff;
+}
+
+select:focus,
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(15, 108, 189, 0.14);
+}
+
+button {
+    margin-top: 4px;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+.message {
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.error {
+    background: var(--error-bg);
+    color: var(--error-text);
+    border-color: #f7caca;
+}
+
+.result {
+    background: var(--result-bg);
+    color: var(--result-text);
+    border-color: #c7e2fa;
+}
+
+.result p {
+    margin: 0 0 6px;
+}
+
+.result .value {
+    margin-top: 8px;
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+@media (max-width: 700px) {
+    .card {
+        padding: 20px;
+    }
+}

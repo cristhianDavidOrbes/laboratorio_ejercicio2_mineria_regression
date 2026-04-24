@@ -1,0 +1,47 @@
+{
+  "input_path": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\dolar_data.csv",
+  "filas_raw": 500,
+  "filas_tipadas": 500,
+  "filas_invalidas_eliminadas": 0,
+  "duplicados_dia_eliminados": 0,
+  "rango_dia": {
+    "min": 1,
+    "max": 500
+  },
+  "dias_faltantes_rellenados": 0,
+  "nulos_antes_imputacion": {
+    "inflacion": 0,
+    "tasa_interes": 0,
+    "precio_dolar": 0
+  },
+  "nulos_despues_imputacion": {
+    "inflacion": 0,
+    "tasa_interes": 0,
+    "precio_dolar": 0
+  },
+  "imputaciones_por_columna": {
+    "inflacion": 0,
+    "tasa_interes": 0,
+    "precio_dolar": 0
+  },
+  "outliers_iqr": {
+    "inflacion": {
+      "detectados": 4,
+      "limite_inferior": 0.006469943659148013,
+      "limite_superior": 0.033189385983055285
+    },
+    "tasa_interes": {
+      "detectados": 5,
+      "limite_inferior": 3.7573676331362282,
+      "limite_superior": 6.265740362485191
+    },
+    "precio_dolar": {
+      "detectados": 0,
+      "limite_inferior": 2771.1235828138233,
+      "limite_superior": 7650.911674994488
+    }
+  },
+  "filas_finales": 500,
+  "output_parquet": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\output\\dolar_data_clean\\parquet",
+  "output_csv": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\output\\dolar_data_clean\\csv"
+}

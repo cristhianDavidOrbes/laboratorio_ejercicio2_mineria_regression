@@ -1,0 +1,34 @@
+{
+  "input_path": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\energia_data.csv",
+  "filas_raw": 10000,
+  "filas_tipadas": 10000,
+  "filas_invalidas_eliminadas": 0,
+  "duplicados_exactos_eliminados": 0,
+  "nulos_antes_imputacion": {
+    "temperatura": 0,
+    "consumo_energia": 0
+  },
+  "nulos_despues_imputacion": {
+    "temperatura": 0,
+    "consumo_energia": 0
+  },
+  "imputaciones_por_columna": {
+    "temperatura": 0,
+    "consumo_energia": 0
+  },
+  "outliers_iqr": {
+    "temperatura": {
+      "detectados": 90,
+      "limite_inferior": 11.478464606651489,
+      "limite_superior": 38.40933591407689
+    },
+    "consumo_energia": {
+      "detectados": 66,
+      "limite_inferior": 226.95527825111935,
+      "limite_superior": 572.8287414892272
+    }
+  },
+  "filas_finales": 10000,
+  "output_csv": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\output\\energia_data\\limpio_energia_data\\csv",
+  "output_parquet": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\output\\energia_data\\limpio_energia_data\\parquet"
+}

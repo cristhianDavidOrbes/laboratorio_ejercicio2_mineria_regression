@@ -1,0 +1,34 @@
+{
+  "input_path": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\glucosa_data.csv",
+  "filas_raw": 2000,
+  "filas_tipadas": 2000,
+  "filas_invalidas_eliminadas": 0,
+  "duplicados_exactos_eliminados": 0,
+  "nulos_antes_imputacion": {
+    "imc": 0,
+    "nivel_glucosa": 0
+  },
+  "nulos_despues_imputacion": {
+    "imc": 0,
+    "nivel_glucosa": 0
+  },
+  "imputaciones_por_columna": {
+    "imc": 0,
+    "nivel_glucosa": 0
+  },
+  "outliers_iqr": {
+    "imc": {
+      "detectados": 16,
+      "limite_inferior": 14.23088373435988,
+      "limite_superior": 35.859723240437475
+    },
+    "nivel_glucosa": {
+      "detectados": 3,
+      "limite_inferior": 58.83075896078877,
+      "limite_superior": 219.43224210506605
+    }
+  },
+  "filas_finales": 2000,
+  "output_csv": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\output\\glucosa_data\\limpio_glucosa_data\\csv",
+  "output_parquet": "C:\\Users\\57320\\Desktop\\limpieza_mineria\\output\\glucosa_data\\limpio_glucosa_data\\parquet"
+}

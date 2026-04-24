@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laboratorio de Mineria de Datos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="layout">
+        <section class="card">
+            <h1>Laboratorio de Mineria de Datos</h1>
+            <p class="subtitle">Predicciones con modelos de regresion lineal multiple exportados con joblib.</p>
+
+            <form method="post" action="{{ url_for('predecir') }}" novalidate>
+                <div class="field-row">
+                    <label for="ejercicio">Ejercicio</label>
+                    <select id="ejercicio" name="ejercicio">
+                        {% for clave, data in ejercicios.items() %}
+                        <option value="{{ clave }}" {% if clave == ejercicio_seleccionado %}selected{% endif %}>{{ data.titulo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                {% for clave, data in ejercicios.items() %}
+                <div class="input-group" data-ejercicio="{{ clave }}">
+                    {% for campo in data.campos %}
+                    <div class="field-row">
+                        <label for="{{ clave }}_{{ campo.nombre }}">{{ campo.label }}</label>
+                        <input
+                            id="{{ clave }}_{{ campo.nombre }}"
+                            name="{{ campo.nombre }}"
+                            type="text"
+                            inputmode="decimal"
+                            placeholder="Ingresa un valor numerico"
+                            value="{{ datos_formulario.get(campo.nombre, '') }}"
+                        >
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+
+                <button type="submit">Predecir</button>
+            </form>
+
+            {% if error %}
+            <div class="message error">{{ error }}</div>
+            {% endif %}
+
+            {% if resultado %}
+            <div class="message result">
+                <p><strong>Ejercicio:</strong> {{ resultado.ejercicio }}</p>
+                <p><strong>Modelo:</strong> {{ resultado.nombre_modelo }}</p>
+                <p><strong>Variable objetivo:</strong> {{ resultado.objetivo }}</p>
+                <p class="value">{{ resultado.valor }}</p>
+            </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <script>
+        const selector = document.getElementById("ejercicio");
+        const grupos = document.querySelectorAll(".input-group");
+
+        function alternarCampos() {
+            const valor = selector.value;
+            grupos.forEach((grupo) => {
+                grupo.style.display = grupo.dataset.ejercicio === valor ? "grid" : "none";
+            });
+        }
+
+        selector.addEventListener("change", alternarCampos);
+        alternarCampos();
+    </script>
+</body>
+</html>
